@@ -1,8 +1,17 @@
 ﻿@page
-@model Vault.Pages.Vault.ListModel
+@model ListModel
 @{
     ViewData["Title"] = "List";
 }
 
 <h1>List</h1>
 
+<table class="table">
+    @foreach(var password in Model.passwords)
+    {
+    <tr>
+        <td>@password.Name</td>
+        <td>@password.Passphrase</td>
+    </tr>
+    }
+</table>
