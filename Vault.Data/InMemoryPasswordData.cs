@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Vault.Data
 {
-    class InMemoryPasswordData : IPasswordData
+    public class InMemoryPasswordData : IPasswordData
     {
         readonly List<Password> passwords;
         public InMemoryPasswordData()
