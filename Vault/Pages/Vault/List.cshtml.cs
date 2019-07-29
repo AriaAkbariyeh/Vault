@@ -18,9 +18,9 @@ namespace Vault.Pages.Vault
         {
             this.passwordData = passwordData;
         }
-        public void OnGet()
+        public void OnGet(string searchTerm)
         {
-            passwords = passwordData.GetAll();
+            passwords = passwordData.GetPasswordByName(searchTerm);
         }
     }
 }

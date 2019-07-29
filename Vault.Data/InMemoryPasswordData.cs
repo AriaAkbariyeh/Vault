@@ -19,11 +19,18 @@ namespace Vault.Data
             };
         }
 
-        public IEnumerable<Password> GetAll()
+        public IEnumerable<Password> GetPasswordByName(string name = null)
         {
-            return from r in passwords
-                   orderby r.Name
-                   select r;
+            string loweredCaseName = null;
+            if (!string.IsNullOrEmpty(name))
+            {
+                loweredCaseName = name.ToLower();
+            }
+             
+            return from p in passwords
+                   where string.IsNullOrEmpty(loweredCaseName) ||  p.Name.ToLower().StartsWith(loweredCaseName)
+                   orderby p.Name
+                   select p;
         }
     }
 }
