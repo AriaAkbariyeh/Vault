@@ -4,5 +4,15 @@
     ViewData["Title"] = "Detail";
 }
 
-<h1>Detail</h1>
+<h1 class="h2">Details</h1>
 
+<div>
+    Name: @Model.Password.Name
+</div>
+
+<div>
+    Password: @Model.Password.Passphrase
+</div>
+
+
+<a asp-page="./List" class="btn btn-default">Passwords</a>
