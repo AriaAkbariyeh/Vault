@@ -27,6 +27,12 @@
     <tr>
         <td>@password.Name</td>
         <td>@password.Passphrase</td>
+        <td>
+            <a class="btn btn-lg"
+               asp-page=".\Detail" asp-route-passwordId="@password.Id">
+                <i class="glyphicon glyphicon-zoom-in"></i>
+            </a>
+        </td>
     </tr>
     }
 </table>

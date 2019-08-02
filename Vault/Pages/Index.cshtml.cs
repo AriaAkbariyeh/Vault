@@ -13,5 +13,11 @@ namespace Vault.Pages
         {
 
         }
+
+        public RedirectToPageResult OnPost()
+        {
+            return new RedirectToPageResult(@"\vault\list");
+        }
     }
+
 }
