@@ -14,13 +14,16 @@ namespace Vault.Pages.Vault
         private readonly IPasswordData passwordData;
         public IEnumerable<Password> passwords { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public ListModel(IPasswordData passwordData)
         {
             this.passwordData = passwordData;
         }
-        public void OnGet(string searchTerm)
+        public void OnGet()
         {
-            passwords = passwordData.GetPasswordByName(searchTerm);
+            passwords = passwordData.GetPasswordByName(SearchTerm);
         }
     }
 }
