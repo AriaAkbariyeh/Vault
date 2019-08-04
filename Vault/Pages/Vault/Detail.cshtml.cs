@@ -5,16 +5,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Vault.Core;
+using Vault.Data;
 
 namespace Vault.Pages.Vault
 {
     public class DetailModel : PageModel
     {
+        private readonly IPasswordData passwordData;
+
         public Password Password{ get; set; }
 
-        public void OnGet()
+        public DetailModel(IPasswordData passwordData)
         {
-            Password = new Password();
+            this.passwordData = passwordData;
+        }
+
+        public void OnGet(int passwordId)
+        {
+            Password = passwordData.GetPasswordById(passwordId);
         }
     }
 }
+
