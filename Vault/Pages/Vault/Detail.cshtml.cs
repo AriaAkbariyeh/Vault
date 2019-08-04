@@ -20,9 +20,16 @@ namespace Vault.Pages.Vault
             this.passwordData = passwordData;
         }
 
-        public void OnGet(int passwordId)
+        public IActionResult OnGet(int passwordId)
         {
             Password = passwordData.GetPasswordById(passwordId);
+
+            if(Password == null)
+            {
+                return RedirectToPage("./NotFound");
+            }
+
+            return Page();
         }
     }
 }
