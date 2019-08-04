@@ -32,5 +32,10 @@ namespace Vault.Data
                    orderby p.Name
                    select p;
         }
+
+        public Password GetPasswordById(int id)
+        {
+            return passwords.SingleOrDefault(r => r.Id == id);
+        }
     }
 }

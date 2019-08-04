@@ -8,5 +8,7 @@ namespace Vault.Data
     public interface IPasswordData
     {
         IEnumerable<Password> GetPasswordByName(string name);
+        Password GetPasswordById(int id);
     }
+
 }
