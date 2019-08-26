@@ -13,6 +13,7 @@ namespace Vault.Pages.Vault
     {
         private readonly IPasswordData passwordData;
 
+        [BindProperty]
         public Password Password { get; set; }
 
         public EditModel(IPasswordData passwordData)
@@ -30,6 +31,14 @@ namespace Vault.Pages.Vault
                 return RedirectToPage("./NotFound");
             }
 
+            return Page();
+        }
+
+
+        public IActionResult OnPost()
+        {
+            Password = passwordData.Update(Password);
+            passwordData.Commit();
             return Page();
         }
     }
