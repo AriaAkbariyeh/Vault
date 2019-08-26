@@ -12,10 +12,13 @@
     <div class="form-group">
         <label asp-for="Password.Name"></label>
         <input asp-for="Password.Name" class="form-control" />
+        <span class="text-danger" asp-validation-for="Password.Name"></span>
     </div>
     <div class="form-group">
         <label asp-for="Password.Passphrase"></label>
         <input asp-for="Password.Passphrase" class="form-control" />
+        <span class="text-danger" asp-validation-for="Password.Passphrase"></span>
+
     </div>
     <button type="submit" class="btn btn-primary">Save</button>
 </form>

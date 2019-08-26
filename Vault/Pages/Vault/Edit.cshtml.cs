@@ -37,8 +37,13 @@ namespace Vault.Pages.Vault
 
         public IActionResult OnPost()
         {
-            Password = passwordData.Update(Password);
-            passwordData.Commit();
+
+            if (ModelState.IsValid)
+            {
+                Password = passwordData.Update(Password);
+                passwordData.Commit();
+            }
+
             return Page();
         }
     }
