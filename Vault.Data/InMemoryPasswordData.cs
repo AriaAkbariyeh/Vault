@@ -35,7 +35,23 @@ namespace Vault.Data
 
         public Password GetPasswordById(int id)
         {
-            return passwords.SingleOrDefault(r => r.Id == id);
+            return passwords.SingleOrDefault(p => p.Id == id);
+        }
+
+        public Password Update(Password updatedPassword)
+        {
+            var password = passwords.SingleOrDefault(p => p.Id == updatedPassword.Id);
+            if (password != null)
+            {
+                password.Name = updatedPassword.Name;
+                password.Passphrase = updatedPassword.Passphrase;
+            }
+            return password;
+        }
+
+        public int Commit()
+        {
+            return 0;
         }
     }
 }
