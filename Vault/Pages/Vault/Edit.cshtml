@@ -7,3 +7,15 @@
 
 <h1>Edit Password Page</h1>
 
+<form method="post">
+    <input type="hidden" asp-for="Password.Id" />
+    <div class="form-group">
+        <label asp-for="Password.Name"></label>
+        <input asp-for="Password.Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Password.Passphrase"></label>
+        <input asp-for="Password.Passphrase" class="form-control" />
+    </div>
+    <button class="btn btn-primary">Save</button>
+</form>
