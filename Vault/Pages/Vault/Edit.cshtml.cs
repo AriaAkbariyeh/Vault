@@ -42,6 +42,7 @@ namespace Vault.Pages.Vault
             {
                 Password = passwordData.Update(Password);
                 passwordData.Commit();
+                return RedirectToPage("./List");
             }
 
             return Page();
