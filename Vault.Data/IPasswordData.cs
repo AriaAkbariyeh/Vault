@@ -9,6 +9,10 @@ namespace Vault.Data
     {
         IEnumerable<Password> GetPasswordByName(string name);
         Password GetPasswordById(int id);
+
+        Password Update(Password updatedPassword);
+        int Commit();
     }
+    
 
 }
