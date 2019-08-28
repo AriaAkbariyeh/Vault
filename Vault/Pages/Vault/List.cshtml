@@ -6,6 +6,10 @@
 
 <h1>List</h1>
 
+@if(Model.Message != null)
+{
+    <div class="alert alert-primary">@Model.Message</div>
+}
 
 <form method="get">
     <div class="form-group">

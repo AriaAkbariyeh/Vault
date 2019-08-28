@@ -17,6 +17,9 @@ namespace Vault.Pages.Vault
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
 
+        [TempData]
+        public string Message { get; set; }
+
         public ListModel(IPasswordData passwordData)
         {
             this.passwordData = passwordData;

@@ -52,10 +52,12 @@ namespace Vault.Pages.Vault
             if(Password.Id > 0)
             {
                 Password = passwordData.Update(Password);
-                
-            } else
+                TempData["Message"] = "Password updated!";
+            }
+            else
             {
                 passwordData.Add(Password);
+                TempData["Message"] = "Password created!";
             }
 
             passwordData.Commit();
