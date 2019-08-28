@@ -11,6 +11,7 @@ namespace Vault.Data
         Password GetPasswordById(int id);
 
         Password Update(Password updatedPassword);
+        Password Add(Password newPassword);
         int Commit();
     }
     

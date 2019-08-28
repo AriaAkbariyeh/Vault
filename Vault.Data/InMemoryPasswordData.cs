@@ -53,5 +53,12 @@ namespace Vault.Data
         {
             return 0;
         }
+
+        public Password Add(Password newPassword)
+        {
+            passwords.Add(newPassword);
+            newPassword.Id = passwords.Max(p => p.Id) + 1;
+            return newPassword;
+        }
     }
 }

@@ -22,23 +22,26 @@
 </form>
 
 <table class="table">
-    @foreach(var password in Model.passwords)
+    @foreach (var password in Model.passwords)
     {
-    <tr>
-        <td>@password.Name</td>
-        <td>@password.Passphrase</td>
-        <td>
-            <a class="btn btn-lg"
-               asp-page=".\Detail" asp-route-passwordId="@password.Id">
-                <i class="glyphicon glyphicon-zoom-in"></i>
-            </a>
-        </td>
-        <td>
-            <a class="btn btn-lg"
-               asp-page=".\Edit" asp-route-passwordId="@password.Id">
-                <i class="glyphicon glyphicon-edit"></i>
-            </a>
-        </td>
-    </tr>
+        <tr>
+            <td>@password.Name</td>
+            <td>@password.Passphrase</td>
+            <td>
+                <a class="btn btn-lg"
+                   asp-page=".\Detail" asp-route-passwordId="@password.Id">
+                    <i class="glyphicon glyphicon-zoom-in"></i>
+                </a>
+            </td>
+            <td>
+                <a class="btn btn-lg"
+                   asp-page=".\Edit" asp-route-passwordId="@password.Id">
+                    <i class="glyphicon glyphicon-edit"></i>
+                </a>
+            </td>
+        </tr>
     }
 </table>
+
+
+<a class="btn btn-primary" asp-page=".\Edit" >Add New</a>

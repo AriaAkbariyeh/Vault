@@ -21,10 +21,16 @@ namespace Vault.Pages.Vault
             this.passwordData = passwordData;
         }
 
-        public IActionResult OnGet(int passwordId)
+        public IActionResult OnGet(int? passwordId)
         {
 
-            Password = passwordData.GetPasswordById(passwordId);
+            if (passwordId.HasValue)
+            {
+                Password = passwordData.GetPasswordById(passwordId.Value);
+            }else
+            {
+                Password = new Password();
+            }
 
             if (Password == null)
             {
@@ -38,14 +44,23 @@ namespace Vault.Pages.Vault
         public IActionResult OnPost()
         {
 
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                Password = passwordData.Update(Password);
-                passwordData.Commit();
-                return RedirectToPage("./List");
+                return Page();
             }
 
-            return Page();
+            if(Password.Id > 0)
+            {
+                Password = passwordData.Update(Password);
+                
+            } else
+            {
+                passwordData.Add(Password);
+            }
+
+            passwordData.Commit();
+            return RedirectToPage("./List");
+
         }
     }
 }
