@@ -13,9 +13,9 @@ namespace Vault.Data
         {
             passwords = new List<Password>()
             {
-                new Password(){ Id = 1, Name = "MongoDB Atlas", Passphrase="Aria1234" },
-                new Password(){ Id = 2, Name = "MongoDB Lab", Passphrase="Aria1234" },
-                new Password(){ Id = 3, Name = "Azure", Passphrase="Aria1234" },
+                new Password(){ _id = 1, Name = "MongoDB Atlas", Passphrase="Aria1234" },
+                new Password(){ _id = 2, Name = "MongoDB Lab", Passphrase="Aria1234" },
+                new Password(){ _id = 3, Name = "Azure", Passphrase="Aria1234" },
             };
         }
 
@@ -35,12 +35,12 @@ namespace Vault.Data
 
         public Password GetPasswordById(int id)
         {
-            return passwords.SingleOrDefault(p => p.Id == id);
+            return passwords.SingleOrDefault(p => p._id == id);
         }
 
         public Password Update(Password updatedPassword)
         {
-            var password = passwords.SingleOrDefault(p => p.Id == updatedPassword.Id);
+            var password = passwords.SingleOrDefault(p => p._id == updatedPassword._id);
             if (password != null)
             {
                 password.Name = updatedPassword.Name;
@@ -57,7 +57,7 @@ namespace Vault.Data
         public Password Add(Password newPassword)
         {
             passwords.Add(newPassword);
-            newPassword.Id = passwords.Max(p => p.Id) + 1;
+            newPassword._id = passwords.Max(p => p._id) + 1;
             return newPassword;
         }
     }
