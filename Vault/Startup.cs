@@ -25,7 +25,8 @@ namespace Vault
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<IPasswordData>(x => new MongoPasswordData(Configuration.GetConnectionString("PasswordsDB")));
+            //services.AddScoped<IPasswordData>(x => new MongoPasswordData(Configuration.GetConnectionString("PasswordsDB")));
+            services.AddSingleton<IPasswordData,InMemoryPasswordData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
