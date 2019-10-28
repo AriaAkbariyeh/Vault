@@ -31,8 +31,10 @@ namespace Vault
                 options.UseSqlServer(Configuration.GetConnectionString("LocalSqlPasswordsDB"))   
             );
 
+            services.AddScoped<IPasswordData, SqlPasswordData>();
+
             //services.AddScoped<IPasswordData>(x => new MongoPasswordData(Configuration.GetConnectionString("PasswordsDB")));
-            services.AddSingleton<IPasswordData,InMemoryPasswordData>();
+            //services.AddSingleton<IPasswordData,InMemoryPasswordData>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
