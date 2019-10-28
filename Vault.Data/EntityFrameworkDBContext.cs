@@ -6,8 +6,14 @@ using Vault.Core;
 
 namespace Vault.Data
 {
-    class EntityFrameworkDBContext : DbContext
+    public class EntityFrameworkDBContext : DbContext
     {
+        public EntityFrameworkDBContext(DbContextOptions<EntityFrameworkDBContext> options)
+            :base(options)
+        {
+
+        }
+
         public DbSet<Password> Password { get; set; }
     }
 }
