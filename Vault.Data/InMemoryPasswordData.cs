@@ -60,5 +60,17 @@ namespace Vault.Data
             newPassword.Id = passwords.Max(p => p.Id) + 1;
             return newPassword;
         }
+
+        public Password Delete(int id)
+        {
+            var password = passwords.FirstOrDefault(p => p.Id == id);
+
+            if (password != null){
+                passwords.Remove(password);
+            }
+
+            return password;
+
+        }
     }
 }
