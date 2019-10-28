@@ -49,7 +49,7 @@ namespace Vault.Pages.Vault
                 return Page();
             }
 
-            if(Password._id > 0)
+            if(Password.Id > 0)
             {
                 Password = passwordData.Update(Password);
                 TempData["Message"] = "Password updated!";

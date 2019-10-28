@@ -8,7 +8,7 @@ namespace Vault.Core
     public class Password
     {
 
-        public int _id { get; set; }
+        public int Id { get; set; }
 
         [Required]
         public string Name { get; set; }
