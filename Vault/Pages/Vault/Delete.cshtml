@@ -4,10 +4,12 @@
     ViewData["Title"] = "Delete";
 }
 
-<h1>Delete page</h1>
-<p> You are about to delete @Model.Password. Are you sure ? </p>
+<h2>Delete Password Page!</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete @Model.Password.Name ?
+</div>
 
 <form method="post">
-    <button type="submit">Yes</button>
+    <button type="submit" class=" btn btn-danger">Yes</button>
+    <a asp-page="List" class="btn btn-default">Cancel</a>
 </form>
-<a asp-page=".\List"> Back to passwords</a>
