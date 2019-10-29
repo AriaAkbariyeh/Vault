@@ -36,6 +36,11 @@ namespace Vault.Data
             return password;
         }
 
+        public int GetCountOfPasswords()
+        {
+            return db.Password.Count();
+        }
+
         public Password GetPasswordById(int id)
         {
             return db.Password.Find(id);

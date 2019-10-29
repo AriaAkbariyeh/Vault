@@ -72,5 +72,10 @@ namespace Vault.Data
             return password;
 
         }
+
+        public int GetCountOfPasswords()
+        {
+            return passwords.Count();
+        }
     }
 }

@@ -12,10 +12,7 @@ namespace Vault.Data
         Password Update(Password updatedPassword);
         Password Add(Password newPassword);
         Password Delete(int id);
-
+        int GetCountOfPasswords();
         int Commit();
     }
-
-
-
 }
