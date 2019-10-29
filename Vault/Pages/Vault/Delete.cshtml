@@ -1,0 +1,13 @@
+﻿@page "{passwordId:int}"
+@model DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete page</h1>
+<p> You are about to delete @Model.Password. Are you sure ? </p>
+
+<form method="post">
+    <button type="submit">Yes</button>
+</form>
+<a asp-page=".\List"> Back to passwords</a>
